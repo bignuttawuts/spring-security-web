@@ -8,6 +8,6 @@ RUN gradle build -x test
 # Stage 2: Run
 FROM eclipse-temurin:17-jre
 WORKDIR /app
-COPY --from=build /app/target/*.jar app.jar
+COPY --from=build /build/libs/*.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
