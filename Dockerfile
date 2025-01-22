@@ -1,7 +1,7 @@
 # Stage 1: Build
 FROM gradle:8.4-jdk17 AS build
-COPY build.gradle .
-COPY settings.gradle .
+COPY build.gradle.kts .
+COPY settings.gradle.kts .
 COPY src ./src
 RUN gradle build -x test
 
